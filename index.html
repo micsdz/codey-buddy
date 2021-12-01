@@ -1,12 +1,219 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  
-</body>
+  <head>
+    <!-- meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Linking my reset, unicons, and style css -->
+    <link rel="stylesheet" href=".Assets/css/reset.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="./Assets/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="./Assets/css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.0/mdb.min.css" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet"/>
+    <!-- Tab Title -->
+    <title>Codey Buddy</title>
+  </head> 
+  <body>
+    <!-- Header -->
+    <header class="header" id="header">
+       <!-- Nav Menu -->
+      <nav class="nav container">
+        <a href="#" class="nav_logo">Codey Buddy</a>
+
+        <div class="nav_menu" id="nav-menu">
+          <ul class="nav_list grid">
+            <li class="nav_item">
+              <a href="#home" class="nav_link active-link">
+                <i class="uil uil-home nav_icon"></i> Home
+              </a>
+            </li>
+
+            <li class="nav_items">
+              <a href="#about" class="nav_link">
+                <i class="uil uil-user-square nav_icon"></i> Learn More
+              </a>
+            </li>
+
+            <li class="nav_items">
+              <a href="#projects" class="nav_link">
+                <i class="uil uil-bag nav_icon"></i> Favorites
+              </a>
+            </li>
+
+            <li class="nav_items">
+              <a href="" target="_blank" class="nav_link">
+                <i class="uil uil-scenery nav_icon"></i> About
+              </a>
+            </li>
+          </ul>
+
+          <i class="uil uil-times nav_close" id="nav-close"></i>
+        </div>
+
+        <div class="nav_btns">
+          <div class="nav_toggle" id="nav-toggle">
+            <i class="uil uil-apps"></i>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main class="main">
+    <!-- Main Content -->
+      <section class="about section" id="about">
+        <h2 class="section_title">Welcome to Codey Buddy</h2>
+        <span class="section_subtitle">Start your search</span>
+        <div class="about_container container grid">
+          <div class="card">
+            <form id="user-form" class="card-body">
+              <label class="form-label" for="username">Search</label>
+              <input name="username" id="username" type="text" autofocus="true" class="form-input" />
+              <button type="submit" class="btn">Find Resources</button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      
+       <!--Developers-->
+       <section class="portfolio section" id="projects">
+        <h2 class="section_title">About the Developers</h2>
+        <span class="section_subtitle">of Codey Buddy</span>
+
+        <div class="portfolio_container container swiper-container">
+            <div class="swiper-wrapper">
+                <!--Giovanni-->
+                <div class="portfolio_content grid swiper-slide">
+                    <img src="Assets/Images/beans.jpg" alt="Giovanni's Portrait" class="portfolio_img">
+
+                    <div class="portfolio_data">
+                        <h3 class="portfolio_title">Giovanni Domino</h3>
+                        <p class="portfolio_description">He is currently attending the Full Stack Boot Camp in University of Denver</p>
+                          <a href="https://www.linkedin.com" target="_blank" class="home_social-icon">
+                            <i class="uil uil-linkedin"></i>
+                          </a>
+                          <a href="https://github.com" target="_blank" class="home_social-icon">
+                            <i class="uil uil-github"></i>
+                          </a>
+                          <a href="mailto:" target="_blank" class="home_social-icon">
+                            <i class="uil uil-envelopes"></i>
+                          </a>
+                    </div>
+                </div>
+                <!--Micah-->
+                <div class="portfolio_content grid swiper-slide">
+                    <img src="Assets/Images/IMG_4085 (1).jpg" alt="Micah's Portrait" class="portfolio_img">
+
+                    <div class="portfolio_data">
+                        <h3 class="portfolio_title">Micah Diaz</h3>
+                        <p class="portfolio_description">She is currently attending the Full Stack Boot Camp in University of Denver</p>
+                          <a href="https://www.linkedin.com/in/mdiaz06/" target="_blank" class="home_social-icon">
+                            <i class="uil uil-linkedin"></i>
+                          </a>
+                          <a href="https://github.com/micsdz" target="_blank" class="home_social-icon">
+                            <i class="uil uil-github"></i>
+                          </a>
+                          <a href="mailto:micah.diaz@du.edu" target="_blank" class="home_social-icon">
+                            <i class="uil uil-envelopes"></i>
+                          </a>
+                    </div>
+                </div>
+                <!--Naj-->
+                <div class="portfolio_content grid swiper-slide">
+                  <img src="Assets/Images/" alt="Naijla's Portrait" class="portfolio_img">
+
+                  <div class="portfolio_data">
+                      <h3 class="portfolio_title">Naijla Parker</h3>
+                      <p class="portfolio_description">She is currently attending the Full Stack Boot Camp in University of Denver</p>
+                        <a href="https://www.linkedin.com" target="_blank" class="home_social-icon">
+                          <i class="uil uil-linkedin"></i>
+                        </a>
+                        <a href="https://github.com" target="_blank" class="home_social-icon">
+                          <i class="uil uil-github"></i>
+                        </a>
+                        <a href="mailto:" target="_blank" class="home_social-icon">
+                          <i class="uil uil-envelopes"></i>
+                        </a>
+                  </div>
+              </div>
+                <!--Kelly-->
+                <div class="portfolio_content grid swiper-slide">
+                    <img src="Assets/Images/" alt="Kelly's Portrait" class="portfolio_img">
+
+                    <div class="portfolio_data">
+                        <h3 class="portfolio_title">Kelly Walsh</h3>
+                        <p class="portfolio_description">She is currently attending the Full Stack Boot Camp in University of Denver</p>
+                        <a href="https://www.linkedin.com" target="_blank" class="home_social-icon">
+                          <i class="uil uil-linkedin"></i>
+                        </a>
+                        <a href="https://github.com" target="_blank" class="home_social-icon">
+                          <i class="uil uil-github"></i>
+                        </a>
+                        <a href="mailto:" target="_blank" class="home_social-icon">
+                          <i class="uil uil-envelopes"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-button-next">
+                <i class="uil uil-angle-right-b swiper-portfolio-icon"></i>
+            </div>
+            <div class="swiper-button-prev">
+                <i class="uil uil-angle-left-b swiper-portfolio-icon"></i>
+            </div>
+
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+</main>
+<!-- Footer -->
+<footer class="footer">
+<div class="footer_bg">
+  <div class="footer_container container grid">
+      <div>
+          <h1 class="footer_title">Codey Buddy</h1>
+          <span class="footer_subtitle">your bud in learning to code</span>
+      </div>
+
+      <ul class="footer_links">
+          <li>
+              <a href="#home" class="footer_link">Home</a>
+          </li>
+          <li>
+              <a href="#projects" class="footer_link">Learn More</a>
+          </li>
+          <li>
+              <a href="#contact" class="footer_link">Favorites</a>
+          </li>
+      </ul>
+
+      <div class="footer_socials">
+          <a href="https://www.facebook.com/mhaicxh23" target="_blank" class="footer_social">
+              <i class="uil uil-facebook-f"></i>
+          </a>
+          <a href="https://www.instagram.com/micsdz/" target="_blank" class="footer_social">
+              <i class="uil uil-instagram"></i>
+          </a>
+          <a href="https://twitter.com/mhaicxh23?lang=en" target="_blank" class="footer_social">
+              <i class="uil uil-twitter-alt"></i>
+          </a>
+      </div>
+  </div>
+
+  <p class="footer_copy">&#169; Codey Buddy Website</p>
+</div>
+</footer>
+
+<!--Scroll Top Button-->
+<a href="#" class="scrollup" id="scroll-top">
+<i class="uil uil-arrow-up scrollup_icon"></i>
+</a>
+
+<!--Swiper.js-->
+<script src="Assets/js/swiper-bundle.min.js"></script>
+
+<!-- main js -->
+    <script src="Assets/js/script.js"></script>
+  </body>
 </html>
