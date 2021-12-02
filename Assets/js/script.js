@@ -23,6 +23,44 @@ function linkAction(){
     navMenu.classList.remove('show-menu')
 }
 navLink.forEach(n => n.addEventListener('click', linkAction))
+// Autocomplete widget
+$(function () {
+    var languageNames = [
+      'Argus',
+      'BETA',
+      'C',
+      'C#',
+      'C++',
+      'CSS',
+      'Dart',
+      'Express.js',
+      'Git',
+      'Go',
+      'HTML',
+      'Java',
+      'JavaScript',
+      'jQuery',
+      'JSON',
+      'Kotlin',
+      'MATLAB',
+      'MySQL',
+      'Node.js',
+      'NoSQL',
+      'Pearl',
+      'PHP',
+      'Python',
+      'R',
+      'React',
+      'Ruby',
+      'Rust',
+      'Scala',
+      'Swift',
+      'Typescript',
+    ];
+    $('#search-here').autocomplete({
+      source: languageNames,
+    });
+  });
 /* Project Swiper */
 let swiperPortfolio = new Swiper('.portfolio_container', {
     cssMode: true,
