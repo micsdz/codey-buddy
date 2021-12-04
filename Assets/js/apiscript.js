@@ -2,8 +2,51 @@ const searchInput = document.getElementById("search-here");
 const searchButton = document.getElementById("search-btn");
 const articlesDiv = document.getElementById("ex1-tabs-1");
 const videosDiv = document.getElementById("ex1-tabs-2");
+const favDiv = document.getElementById("favorites-container");
 
 const apiKey = "AIzaSyDW_VEGzWHTEaftCppwRMklcHH3tpPUBdU";
+
+let favorites = [];
+
+function getFavorites() {
+  favorites = JSON.parse(localStorage.getItem("savedFavorites") || "[]");
+}
+
+function setFavorite(clickedId) {
+  // "do this for the title" const favTitle = ....
+  const favUrl = document.getElementById(clickedId + "-url").value;
+  const newFav = {
+    url: favUrl,
+  };
+  getFavorites();
+  if (
+    favorites.length === 0 ||
+    favorites.some((fav) => {
+      return fav.url === newFav.url;
+    })
+  ) {
+    return listFavorites();
+  }
+
+  favorites.push(newFav);
+  localStorage.setItem("savedFavorites", JSON.stringify(favorites));
+  listFavorites();
+}
+
+function listFavorites() {
+  getFavorites();
+  let html = "<ul>";
+  favorites.forEach((fav) => {
+    html += `<li><a href="${fav.url}">${fav.url}</a></li>`;
+  });
+  html += "</ul>";
+  favDiv.innerHTML = html;
+}
+function createFavoriteHTML(id, url) {
+  let favData = `<input id = "fav-btn-${id}-url" value = "${url}" type = "hidden"></input>`;
+  let favBtn = `<button id = "fav-btn-${id}" onClick = "setFavorite(this.id)">Favorite</button>`;
+  return favData + favBtn;
+}
 
 //#region Youtube
 function showYoutubeResults(response) {
@@ -23,7 +66,9 @@ function showYoutubeResults(response) {
       '<div class="result-item-text">' +
       `<h1>V: ${title}</h1>` +
       `<p>${description}</p>` +
-      "</div></a></div>";
+      "</div></a>" +
+      createFavoriteHTML(videoId, url) +
+      "</div>";
   });
 
   videosDiv.innerHTML = html;
@@ -56,7 +101,7 @@ function showGoogleResults(response) {
   let html = "";
   let searchResults = response.items;
 
-  searchResults.forEach((item) => {
+  searchResults.forEach((item, index) => {
     let title = item.title;
     let url = item.link;
     let thumbnail;
@@ -64,13 +109,16 @@ function showGoogleResults(response) {
     if (pagemap && pagemap.cse_thumbnail) {
       thumbnail = pagemap.cse_thumbnail[0].src;
     }
+
     html +=
       '<div class="result-item-base google-result-item">' +
       `<a href="${url}">` +
       (thumbnail ? `<img src="${thumbnail}" width="128" height="128">` : "") +
       '<div class="result-item-text">' +
       `<h1>A: ${title}</h1>` +
-      "</div></a></div>";
+      "</div></a>" +
+      createFavoriteHTML(index, url) +
+      "</div>";
   });
 
   articlesDiv.innerHTML = html;
@@ -104,3 +152,5 @@ searchButton.addEventListener("click", function (e) {
   searchYoutube();
   searchGoogle();
 });
+
+listFavorites();
