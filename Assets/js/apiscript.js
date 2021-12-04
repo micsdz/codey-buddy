@@ -4,7 +4,7 @@ const articlesDiv = document.getElementById("article-just");
 const videosDiv = document.getElementById("videos-just");
 const favDiv = document.getElementById("favorites-container");
 
-const apiKey = "AIzaSyDW_VEGzWHTEaftCppwRMklcHH3tpPUBdU";
+const apiKey = "AIzaSyCNnmoe6GLNxRlBzgRNaKTYG_pIuXCn8d4";
 
 let favorites = [];
 
