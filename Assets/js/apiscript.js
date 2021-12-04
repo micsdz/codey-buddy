@@ -20,7 +20,6 @@ function setFavorite(clickedId) {
   };
   getFavorites();
   if (
-    favorites.length === 0 ||
     favorites.some((fav) => {
       return fav.url === newFav.url;
     })
