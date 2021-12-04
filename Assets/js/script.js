@@ -62,14 +62,7 @@ $(function () {
       source: languageNames,
     });
   });
-// $(".nav-item a").on('click', function(){
-//     $(".nav-item a").removeClass("active");
-//     $(this).addClass("active");
-// });
-// $(".tab-pane").on('click', function(){
-//     $(".tab-pane").removeClass("show active");
-//     $(this).addClass("show active");
-// })
+//   Learn More Tab
 $(document).ready(function() {
     var navItems = document.querySelector('.nav.nav-tabs').children;
     var tabPanes = document.querySelectorAll('.tab-pane');

@@ -131,7 +131,7 @@ img{
     color: var(--title-color);
     font-weight: var(--font-medium);
 }
-/* when you hover to my name */
+/* when you hover links */
 .nav_toggle:hover, .nav_link:hover, .active-link,
  .nav_logo:hover, .qualification_button:hover, 
  .qualification_button, .qualification_active{
@@ -195,43 +195,9 @@ img{
     box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.15);
 }
 /* Main - Home */
-.home_container{
-    gap: 1rem;
-}
-.home_content{
-    grid-template-columns: .5fr 3fr;
-    padding-top: 3.5rem;
-    align-items: center;
-}
-.home_social{
-    display: grid;
-    grid-template-columns: max-content;
-    row-gap: 1rem;
-}
 .home_social-icon{
     font-size: var(--h2-font-size);
     color: var(--first-color);
-}
-.home_blob-img{
-    width: 200px;
-}
-.home_data{
-    grid-column: 1/3;
-}
-.home_title{
-    font-size: var(--big-font-size);
-}
-.home_subtitle{
-    font-size: var(--h3-font-size);
-    color: var(--text-color);
-    font-weight: var(--font-medium);
-    margin-bottom: var(--mb-0-75);
-}
-.home_description{
-    margin-bottom: var(--mb-2);
-}
-.home_scroll{
-    display: none;
 }
 .home_scroll-button{
     color: var(--first-color);
@@ -652,4 +618,8 @@ width: 460px;
 .contact_inputs {
 grid-template-columns: repeat(2, 1fr);
 }
+}
+.games-bg {
+    background: var(--input-color);
+    border-inline-color: var(--first-color);
 }
