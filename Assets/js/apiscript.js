@@ -1,7 +1,7 @@
 const searchInput = document.getElementById("search-here");
 const searchButton = document.getElementById("search-btn");
-const articlesDiv = document.getElementById("ex1-tabs-1");
-const videosDiv = document.getElementById("ex1-tabs-2");
+const articlesDiv = document.getElementById("article-just");
+const videosDiv = document.getElementById("videos-just");
 const favDiv = document.getElementById("favorites-container");
 
 const apiKey = "AIzaSyDW_VEGzWHTEaftCppwRMklcHH3tpPUBdU";
