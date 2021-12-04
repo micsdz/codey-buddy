@@ -1,7 +1,7 @@
 const searchInput = document.getElementById("search-here");
 const searchButton = document.getElementById("search-btn");
-const articlesDiv = document.getElementById("article-just");
-const videosDiv = document.getElementById("videos-just");
+const articlesDiv = document.getElementById("article-tab-just");
+const videosDiv = document.getElementById("videos-tab-just");
 const favDiv = document.getElementById("favorites-container");
 
 const apiKey = "AIzaSyDW_VEGzWHTEaftCppwRMklcHH3tpPUBdU";
@@ -150,6 +150,143 @@ searchButton.addEventListener("click", function (e) {
   e.preventDefault();
   searchYoutube();
   searchGoogle();
+  showYoutubeResults(mockYoutubeResults);
+  showGoogleResults(mockGoogleResults);
 });
 
 listFavorites();
+
+const mockYoutubeResults = {
+  items: [
+    {
+      id: {
+        videoId: "MockVideoId0",
+      },
+      snippet: {
+        title: "YouTube Mock Title",
+        description: "YouTube Mock Description, blah blah blah.",
+        thumbnails: {
+          default: {
+            url: "https://i.ytimg.com/vi/eX2qFMC8cFo/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBu-nic8l07zW0vFToITMym5Y5CUQ",
+          },
+        },
+      },
+    },
+    {
+      id: {
+        videoId: "MockVideoId1",
+      },
+      snippet: {
+        title: "YouTube Mock Title",
+        description: "YouTube Mock Description, blah blah blah.",
+        thumbnails: {
+          default: {
+            url: "https://i.ytimg.com/vi/eX2qFMC8cFo/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBu-nic8l07zW0vFToITMym5Y5CUQ",
+          },
+        },
+      },
+    },
+    {
+      id: {
+        videoId: "MockVideoId2",
+      },
+      snippet: {
+        title: "YouTube Mock Title",
+        description: "YouTube Mock Description, blah blah blah.",
+        thumbnails: {
+          default: {
+            url: "https://i.ytimg.com/vi/eX2qFMC8cFo/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBu-nic8l07zW0vFToITMym5Y5CUQ",
+          },
+        },
+      },
+    },
+    {
+      id: {
+        videoId: "MockVideoId3",
+      },
+      snippet: {
+        title: "YouTube Mock Title",
+        description: "YouTube Mock Description, blah blah blah.",
+        thumbnails: {
+          default: {
+            url: "https://i.ytimg.com/vi/eX2qFMC8cFo/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBu-nic8l07zW0vFToITMym5Y5CUQ",
+          },
+        },
+      },
+    },
+    {
+      id: {
+        videoId: "MockVideoId4",
+      },
+      snippet: {
+        title: "YouTube Mock Title",
+        description: "YouTube Mock Description, blah blah blah.",
+        thumbnails: {
+          default: {
+            url: "https://i.ytimg.com/vi/eX2qFMC8cFo/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBu-nic8l07zW0vFToITMym5Y5CUQ",
+          },
+        },
+      },
+    },
+    {
+      id: {
+        videoId: "MockVideoId5",
+      },
+      snippet: {
+        title: "YouTube Mock Title",
+        description: "YouTube Mock Description, blah blah blah.",
+        thumbnails: {
+          default: {
+            url: "https://i.ytimg.com/vi/eX2qFMC8cFo/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBu-nic8l07zW0vFToITMym5Y5CUQ",
+          },
+        },
+      },
+    },
+  ],
+};
+
+const mockGoogleResults = {
+  items: [
+    {
+      title: "Google Mock Title",
+      link: "Google Mock  Url",
+      pagemap: {
+        cse_thumbnail: [
+          {
+            src: "https://i.ytimg.com/vi/eX2qFMC8cFo/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBu-nic8l07zW0vFToITMym5Y5CUQ",
+          },
+        ],
+      },
+    },
+    {
+      title: "Google Mock Title",
+      link: "Google Mock  Url",
+    },
+    {
+      title: "Google Mock Title",
+      link: "Google Mock  Url",
+      pagemap: {
+        cse_thumbnail: [
+          {
+            src: "https://i.ytimg.com/vi/eX2qFMC8cFo/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBu-nic8l07zW0vFToITMym5Y5CUQ",
+          },
+        ],
+      },
+    },
+    {
+      title: "Google Mock Title",
+      link: "Google Mock  Url",
+    },
+    {
+      title: "Google Mock Title",
+      link: "Google Mock  Url",
+      pagemap: {
+        cse_thumbnail: [
+          {
+            src: "https://i.ytimg.com/vi/eX2qFMC8cFo/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBu-nic8l07zW0vFToITMym5Y5CUQ",
+          },
+        ],
+      },
+    },
+  ],
+};
