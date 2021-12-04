@@ -9,7 +9,7 @@ if(navToggle){
     })
 }
 // Menu Hidden
-if(navClose){
+if(navClose){ 
     navClose.addEventListener('click', () =>{
         navMenu.classList.remove('show-menu');
     })
@@ -23,6 +23,7 @@ function linkAction(){
     navMenu.classList.remove('show-menu')
 }
 navLink.forEach(n => n.addEventListener('click', linkAction))
+
 // Autocomplete widget
 $(function () {
     var languageNames = [
@@ -61,7 +62,35 @@ $(function () {
       source: languageNames,
     });
   });
-/* Project Swiper */
+// $(".nav-item a").on('click', function(){
+//     $(".nav-item a").removeClass("active");
+//     $(this).addClass("active");
+// });
+// $(".tab-pane").on('click', function(){
+//     $(".tab-pane").removeClass("show active");
+//     $(this).addClass("show active");
+// })
+$(document).ready(function() {
+    var navItems = document.querySelector('.nav.nav-tabs').children;
+    var tabPanes = document.querySelectorAll('.tab-pane');
+    for(let i=0; i < navItems.length; i++) {
+    navItems[i].addEventListener('click', navItemClick);
+    }
+    
+    function navItemClick() {
+    for(let i=0; i < navItems.length; i++) {
+    navItems[i].children[0].classList.remove('active');
+    tabPanes[i].classList.remove('in');
+    tabPanes[i].classList.remove('show');
+    tabPanes[i].classList.remove('active');
+    console.log(tabPanes[i]);
+    }
+    this.children[0].classList.add('active');
+    let attr = this.children[0].getAttribute('href');
+    $(attr).addClass('in show active');
+    }
+    });
+/* About the Developers Swiper */
 let swiperPortfolio = new Swiper('.portfolio_container', {
     cssMode: true,
     loop: true,
@@ -102,7 +131,7 @@ function scrollHeader(){
 }
 window.addEventListener('scroll', scrollHeader)
 
-/* Scroll Top */ 
+/* Scroll Top Icon */ 
 function scrollTop(){
     let scrollTop = document.getElementById('scroll-top');
     // When the scroll is higher than 560 viewport height, add the show-scroll class to the a tag with the scroll-top class
