@@ -12,6 +12,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.0/mdb.min.css" rel="stylesheet"/>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet"/>
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"/>
+    
     <!-- Tab Title -->
     <title>Codey Buddy</title>
   </head> 
@@ -73,8 +74,41 @@
             </div>
           </div>
         </div>
-      </br>
-    </br>
+
+
+        <!-- Modal -->
+        <div
+        class="modal fade"
+        id="modal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Not a language</h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-mdb-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">...</div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">
+                  Close
+                </button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        </br>
+        </br>
         <nav aria-label="Page navigation example">
           <ul class="pagination justify-content-center">
             <li class="page-item"><a class="page-link" href="#">Previous</a></li>
@@ -283,6 +317,12 @@
 
 <!-- jQuery UI Autocomplete -->
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<!-- MDB -->
+<script
+  type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.1/mdb.min.js"
+></script>
 
 <!-- main js -->
     <script src="Assets/js/apiscript.js"></script>
