@@ -3,6 +3,38 @@ const searchButton = document.getElementById("search-btn");
 const articlesDiv = document.getElementById("article-just");
 const videosDiv = document.getElementById("videos-just");
 const favDiv = document.getElementById("favorites-container");
+const languageNames = [
+  "Argus",
+  "BETA",
+  "C",
+  "C#",
+  "C++",
+  "CSS",
+  "Dart",
+  "Express.js",
+  "Git",
+  "Go",
+  "HTML",
+  "Java",
+  "JavaScript",
+  "jQuery",
+  "JSON",
+  "Kotlin",
+  "MATLAB",
+  "MySQL",
+  "Node.js",
+  "NoSQL",
+  "Pearl",
+  "PHP",
+  "Python",
+  "R",
+  "React",
+  "Ruby",
+  "Rust",
+  "Scala",
+  "Swift",
+  "Typescript",
+];
 
 const apiKey = "AIzaSyDW_VEGzWHTEaftCppwRMklcHH3tpPUBdU";
 
@@ -165,11 +197,28 @@ function toggleSavedFavorites() {
 
 searchButton.addEventListener("click", function (e) {
   e.preventDefault();
-  searchYoutube();
-  searchGoogle();
-  showYoutubeResults(mockYoutubeResults);
-  showGoogleResults(mockGoogleResults);
+  const searchTerm = searchInput.value.toLowerCase();
+  if (isValidSearchTerm(searchTerm)) {
+    searchYoutube();
+    searchGoogle();
+  } else {
+    const myModalEl = document.getElementById("modal");
+    const modal = new mdb.Modal(myModalEl);
+    modal.show();
+  }
 });
+
+function isValidSearchTerm(searchTerm) {
+  const languageNamesLowerCase = languageNames.map((lang) =>
+    lang.toLowerCase()
+  );
+
+  if (languageNamesLowerCase.includes(searchTerm)) {
+    return true;
+  } else {
+    return false;
+  }
+}
 
 listFavorites();
 
