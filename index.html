@@ -19,10 +19,10 @@
   <body>
     <!-- Header -->
     <header class="header" id="header">
-       <!-- Nav Menu -->
+      <!-- Nav Menu -->
       <nav class="nav container">
         <a href="#" class="nav_logo">Codey Buddy</a>
-
+        
         <div class="nav_menu" id="nav-menu">
           <ul class="nav_list grid">
             <li class="nav_item">
@@ -30,29 +30,29 @@
                 <i class="uil uil-home nav_icon"></i> Home
               </a>
             </li>
-
+            
             <li class="nav_items">
               <a href="#learnmore" class="nav_link">
                 <i class="uil uil-user-square nav_icon"></i> Learn More
               </a>
             </li>
-
-            <li class="nav_items">
-              <a href="#favorites" class="nav_link">
+            
+            <li class="nav_items" >
+              <a href="#favorites" class="nav_link"><Fav/>
                 <i class="uil uil-bag nav_icon"></i> Favorites
               </a>
             </li>
-
+            
             <li class="nav_items">
               <a href="#aboutdevelopers" target="_blank" class="nav_link">
                 <i class="uil uil-scenery nav_icon"></i> About
               </a>
             </li>
           </ul>
-
+          
           <i class="uil uil-times nav_close" id="nav-close"></i>
         </div>
-
+        
         <div class="nav_btns">
           <div class="nav_toggle" id="nav-toggle">
             <i class="uil uil-apps"></i>
@@ -61,21 +61,20 @@
       </nav>
     </header>
     <main class="main">
-    <!-- Main Content -->
+      <!-- Main Content -->
+      
       <section class="about section" id="about">
         <h2 class="section_title">Welcome to Codey Buddy</h2>
-        <span class="section_subtitle">Start your search</span>
+        <span class="section_subtitle"></span>
         <div class="position-relative">
           <div class="card position-absolute top-100 start-50 translate-middle">
             <div id="user-form" class="card-body justify-content-center">
-              <label class="form-label" for="username">Search</label>
-              <input name="Coding Language" id="search-here" type="text" autofocus="true" class="form-input" />
+              <!-- <label class="form-label" for="username">Search</label> -->
+              <input name="Coding Language" id="search-here" placeholder="Enter Search Term" type="text" autofocus="true" class="form-input" />
               <button id="search-btn" class="search-btn">Find Resources</button>
             </div>
           </div>
         </div>
-
-
         <!-- Modal -->
         <div
         class="modal fade"
@@ -106,11 +105,18 @@
           </div>
         </div>
 
-
-        </br>
-        </br>
         <nav aria-label="Page navigation example">
           <ul class="pagination justify-content-center">
+            <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+      </br>
+    </br>
+    <section class="favLinks">
+      <label for="favorites-container" class=userSaved>Favorites</label>
+      <div id="favorites-container"></div>
+    </section>
+    <nav aria-label="Page navigation example">
+      <!-- <ul class="pagination justify-content-center">
             <li class="page-item"><a class="page-link" href="#">Previous</a></li>
             <li class="page-item"><a class="page-link" href="#">1</a></li>
             <li class="page-item"><a class="page-link" href="#">2</a></li>
@@ -118,7 +124,7 @@
             <li class="page-item"><a class="page-link" href="#">Next</a></li>
           </ul>
         </nav>
-      </section>
+      </section> -->
     <!-- Learn More -->
       <section class="about section" id="learnmore">
         <h2 class="section_title">Learn More</h2>
@@ -140,19 +146,19 @@
         </ul>
         <div class="tab-content card pt-5" id="myTabContentJust">
           <div class="tab-pane fade show active" id="article-just" role="tabpanel" aria-labelledby="article-tab-just">
-            <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro
+            <!-- <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro
               synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher
               retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip
-              placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
+              placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p> -->
           </div>
           <div class="tab-pane fade" id="videos-just" role="tabpanel" aria-labelledby="videos-tab-just">
-            <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1
+            <!-- <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1
               labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft
               beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad
               vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar
               helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes
               anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party
-              scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.</p>
+              scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.</p> -->
           </div>
           <div class="tab-pane fade" id="games-just" role="tabpanel" aria-labelledby="games-tab-just">
             <div class="d-flex flex-column mb-3">
@@ -262,9 +268,7 @@
 
             <div class="swiper-pagination"></div>
         </div>
-        <label for="favorites-container">Favorites</label>
-        <div id="favorites-container"></div>
-
+        
 </main>
 <!-- Footer -->
 <footer class="footer">
