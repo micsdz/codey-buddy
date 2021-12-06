@@ -1,7 +1,7 @@
 const searchInput = document.getElementById("search-here");
 const searchButton = document.getElementById("search-btn");
-const articlesDiv = document.getElementById("article-tab-just");
-const videosDiv = document.getElementById("videos-tab-just");
+const articlesDiv = document.getElementById("article-just");
+const videosDiv = document.getElementById("videos-just");
 const favDiv = document.getElementById("favorites-container");
 
 const apiKey = "AIzaSyDW_VEGzWHTEaftCppwRMklcHH3tpPUBdU";
@@ -145,6 +145,23 @@ function searchGoogle() {
   });
 }
 //#endregion
+function displayFavorites() {
+  favDiv.style.display = "block";
+}
+
+function toggleSavedFavorites() {
+  const mySavedFavorites = document.getElementById("userFavorites");
+  let displaySetting = mySavedFavorites.style.display;
+  let mySavedFavoritesButton = document.getElementById("SavedFavsButton");
+
+  if (displaySetting == "block") {
+    mySavedFavoritesButton.style.display = "none";
+    SavedFavsButton.innerHTML = "Show Favs";
+  } else {
+    mySavedFavoritesButton.style.display = "block";
+    SavedFavsButton.innerHTML = "Hide Favs";
+  }
+}
 
 searchButton.addEventListener("click", function (e) {
   e.preventDefault();
