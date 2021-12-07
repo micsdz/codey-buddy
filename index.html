@@ -12,17 +12,15 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.0/mdb.min.css" rel="stylesheet"/>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet"/>
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"/>
-    
     <!-- Tab Title -->
     <title>Codey Buddy</title>
   </head> 
   <body>
     <!-- Header -->
     <header class="header" id="header">
-      <!-- Nav Menu -->
+       <!-- Nav Menu -->
       <nav class="nav container">
         <a href="#" class="nav_logo">Codey Buddy</a>
-        
         <div class="nav_menu" id="nav-menu">
           <ul class="nav_list grid">
             <li class="nav_item">
@@ -30,29 +28,19 @@
                 <i class="uil uil-home nav_icon"></i> Home
               </a>
             </li>
-            
             <li class="nav_items">
-              <a href="#learnmore" class="nav_link">
-                <i class="uil uil-user-square nav_icon"></i> Learn More
-              </a>
-            </li>
-            
-            <li class="nav_items" >
-              <a href="#favorites" class="nav_link"><Fav/>
+              <a href="#favorites" class="nav_link">
                 <i class="uil uil-bag nav_icon"></i> Favorites
               </a>
             </li>
-            
             <li class="nav_items">
               <a href="#aboutdevelopers" target="_blank" class="nav_link">
                 <i class="uil uil-scenery nav_icon"></i> About
               </a>
             </li>
           </ul>
-          
           <i class="uil uil-times nav_close" id="nav-close"></i>
         </div>
-        
         <div class="nav_btns">
           <div class="nav_toggle" id="nav-toggle">
             <i class="uil uil-apps"></i>
@@ -61,70 +49,50 @@
       </nav>
     </header>
     <main class="main">
-      <!-- Main Content -->
-      
-      <section class="about section" id="about">
+    <!-- Main Content -->
+      <section class="about section" id="home">
         <h2 class="section_title">Welcome to Codey Buddy</h2>
-        <span class="section_subtitle"></span>
+        <span class="section_subtitle">Start your search</span>
         <div class="position-relative">
           <div class="card position-absolute top-100 start-50 translate-middle">
             <div id="user-form" class="card-body justify-content-center">
-              <!-- <label class="form-label" for="username">Search</label> -->
-              <input name="Coding Language" id="search-here" placeholder="Enter Search Term" type="text" autofocus="true" class="form-input" />
-              <button id="search-btn" class="search-btn">Find Resources</button>
+              <label class="form-label" for="search-field">Search</label>
+              <input name="Coding Language" id="search-here" type="text" autofocus="true" class="form-input" />
+              <button id="search-btn" class="search-btn"><img src="./Assets/Images/search2.png" alt="search-icon"></button>
+              <button id="favorites-btn" class="favorites-btn"><img src="./Assets/Images/save.png" alt="save-icon"></button>
             </div>
           </div>
         </div>
-        <!-- Modal -->
-        <div
-        class="modal fade"
-        id="modal"
-        tabindex="-1"
-        aria-labelledby="exampleModalLabel"
-        aria-hidden="true"
-        >
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Not a language</h5>
-                <button
-                  type="button"
-                  class="btn-close"
-                  data-mdb-dismiss="modal"
-                  aria-label="Close"
-                ></button>
-              </div>
-              <div class="modal-body">...</div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">
-                  Close
-                </button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-              </div>
-            </div>
+    <!-- Modal -->
+    <div
+    class="modal fade"
+    id="modal"
+    tabindex="-1"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Invalid Term</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-mdb-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <img src="./Assets/Images/cody-duck.png" class="duck-icon" alt="duck-icon">
+          <div class="modal-body">Please enter a valid coding language.</div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">
+              Close
+            </button>
           </div>
         </div>
-
-        <nav aria-label="Page navigation example">
-          <ul class="pagination justify-content-center">
-            <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-            <li class="page-item"><a class="page-link" href="#">1</a></li>
-      </br>
-    </br>
-    <section class="favLinks">
-      <label for="favorites-container" class=userSaved>Favorites</label>
-      <div id="favorites-container"></div>
-    </section>
-    <nav aria-label="Page navigation example">
-      <!-- <ul class="pagination justify-content-center">
-            <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-            <li class="page-item"><a class="page-link" href="#">1</a></li>
-            <li class="page-item"><a class="page-link" href="#">2</a></li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
-            <li class="page-item"><a class="page-link" href="#">Next</a></li>
-          </ul>
-        </nav>
-      </section> -->
+      </div>
+    </div>
+      </section>
     <!-- Learn More -->
       <section class="about section" id="learnmore">
         <h2 class="section_title">Learn More</h2>
@@ -146,19 +114,10 @@
         </ul>
         <div class="tab-content card pt-5" id="myTabContentJust">
           <div class="tab-pane fade show active" id="article-just" role="tabpanel" aria-labelledby="article-tab-just">
-            <!-- <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro
-              synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher
-              retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip
-              placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p> -->
+            <p></p>
           </div>
           <div class="tab-pane fade" id="videos-just" role="tabpanel" aria-labelledby="videos-tab-just">
-            <!-- <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1
-              labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft
-              beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad
-              vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar
-              helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes
-              anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party
-              scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.</p> -->
+            <p></p>
           </div>
           <div class="tab-pane fade" id="games-just" role="tabpanel" aria-labelledby="games-tab-just">
             <div class="d-flex flex-column mb-3">
@@ -176,9 +135,16 @@
           </div>
         </div>
       </div>
+      <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+          <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+          <li class="page-item"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item"><a class="page-link" href="#">Next</a></li>
+        </ul>
+      </nav>
       </section>
-
-      
        <!--Developers-->
        <section class="portfolio section" id="aboutdevelopers">
         <h2 class="section_title">About the Developers</h2>
@@ -243,7 +209,6 @@
                 <!--Kelly-->
                 <div class="portfolio_content grid swiper-slide">
                     <img src="Assets/Images/kellywalshpic copy.jpg" alt="Kelly's Portrait" class="portfolio_img">
-
                     <div class="portfolio_data">
                         <h1 class="portfolio_title">Kelly Walsh</h1>
                         <p class="portfolio_description">She is currently attending the Full Stack Boot Camp in University of Denver</p>
@@ -268,7 +233,8 @@
 
             <div class="swiper-pagination"></div>
         </div>
-        
+        <label for="favorites-container">Favorites</label>
+        <div id="favorites-container"></div>
 </main>
 <!-- Footer -->
 <footer class="footer">
@@ -278,19 +244,17 @@
           <h1 class="footer_title">Codey Buddy</h1>
           <span class="footer_subtitle">your bud in learning to code</span>
       </div>
-
       <ul class="footer_links">
           <li>
               <a href="#home" class="footer_link">Home</a>
           </li>
           <li>
-              <a href="#projects" class="footer_link">Learn More</a>
+              <a href="#aboutdevelopers" class="footer_link">About</a>
           </li>
           <li>
               <a href="#contact" class="footer_link">Favorites</a>
           </li>
       </ul>
-
       <div class="footer_socials">
           <a href="https://www.facebook.com" target="_blank" class="footer_social">
               <i class="uil uil-facebook-f"></i>
@@ -303,34 +267,26 @@
           </a>
       </div>
   </div>
-
   <p class="footer_copy">&#169; Codey Buddy Website</p>
 </div>
 </footer>
-
 <!--Scroll Top Button-->
 <a href="#" class="scrollup" id="scroll-top">
 <i class="uil uil-arrow-up scrollup_icon"></i>
 </a>
-
 <!-- jQuery -->
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-
 <!--Swiper.js-->
 <script src="Assets/js/swiper-bundle.min.js"></script>
-
 <!-- jQuery UI Autocomplete -->
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-
 <!-- MDB -->
 <script
   type="text/javascript"
   src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.1/mdb.min.js"
 ></script>
-
 <!-- main js -->
     <script src="Assets/js/apiscript.js"></script>
     <script src="Assets/js/script.js"></script>
   </body>
 </html>
-
