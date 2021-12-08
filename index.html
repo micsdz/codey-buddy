@@ -21,7 +21,6 @@
        <!-- Nav Menu -->
       <nav class="nav container">
         <a href="#" class="nav_logo">Codey Buddy</a>
-
         <div class="nav_menu" id="nav-menu">
           <ul class="nav_list grid">
             <li class="nav_item">
@@ -29,29 +28,24 @@
                 <i class="uil uil-home nav_icon"></i> Home
               </a>
             </li>
-
             <li class="nav_items">
-              <a href="#about" class="nav_link">
-                <i class="uil uil-user-square nav_icon"></i> Learn More
-              </a>
-            </li>
-
-            <li class="nav_items">
-              <a href="#projects" class="nav_link">
-                <i class="uil uil-bag nav_icon"></i> Favorites
-              </a>
-            </li>
-
-            <li class="nav_items">
-              <a href="" target="_blank" class="nav_link">
+              <a href="#aboutdevelopers" class="nav_link">
                 <i class="uil uil-scenery nav_icon"></i> About
               </a>
             </li>
+            <li class="nav_items">
+              <a href="#aboutdevelopers" class="nav_link">
+                <i class="uil uil-scenery nav_icon"></i> About
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/micsdz/codey-buddy" target="_blank" class="nav_link">
+                 Github
+              </a>
+            </li>
           </ul>
-
           <i class="uil uil-times nav_close" id="nav-close"></i>
         </div>
-
         <div class="nav_btns">
           <div class="nav_toggle" id="nav-toggle">
             <i class="uil uil-apps"></i>
@@ -61,100 +55,105 @@
     </header>
     <main class="main">
     <!-- Main Content -->
-      <section class="about section" id="about">
+      <section class="about section" id="home">
         <h2 class="section_title">Welcome to Codey Buddy</h2>
-        <span class="section_subtitle">Start your search</span>
+        <span class="section_subtitle">click the <img src="./Assets/Images/favorite.png" id="instruction-icon" alt="save-icon"> icon to save it to favorites</span>
+        <span class="section_subtitle"></span>
         <div class="position-relative">
           <div class="card position-absolute top-100 start-50 translate-middle">
             <div id="user-form" class="card-body justify-content-center">
-              <label class="form-label" for="username">Search</label>
+              <label class="form-label" for="search-field">Search</label>
               <input name="Coding Language" id="search-here" type="text" autofocus="true" class="form-input" />
-              <button id="search-btn" class="search-btn">Find Resources</button>
+              <button id="search-btn" class="search-btn"><img src="./Assets/Images/search2.png" alt="search-icon"></button>
               <button id="prev-btn" class="search-btn">Previous</button>
               <button id="next-btn" class="search-btn">Next</button>
+              <button id="favorites-btn" class="favorites-btn"><img src="./Assets/Images/save.png" alt="save-icon"></button>
             </div>
           </div>
         </div>
-      </br>
-    </br>
-        <nav aria-label="Page navigation example">
-          <ul class="pagination justify-content-center">
-            <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-            <li class="page-item"><a class="page-link" href="#">1</a></li>
-            <li class="page-item"><a class="page-link" href="#">2</a></li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
-            <li class="page-item"><a class="page-link" href="#">Next</a></li>
-          </ul>
-        </nav>
-      </section>
-    <!-- Learn More -->
-      <section class="about section position-relative" id="about">
-        <h2 class="section_title">Learn More</h2>
-        <!-- Tabs navs -->
-
-        <ul class="nav nav-tabs mb-3 position-absolute top-100 start-50 translate-middle" id="ex1" role="tablist">
-          <li class="nav-item" role="presentation">
-            <a
-              class="nav-link active"
-              id="ex1-tab-1"
-              data-mdb-toggle="tab"
-              href="#ex1-tabs-1"
-              role="tab"
-              aria-controls="ex1-tabs-1"
-              aria-selected="true"
-              >Article</a
-            >
-          </li>
-          <li class="nav-item" role="presentation">
-            <a
-              class="nav-link"
-              id="ex1-tab-2"
-              data-mdb-toggle="tab"
-              href="#ex1-tabs-2"
-              role="tab"
-              aria-controls="ex1-tabs-2"
-              aria-selected="false"
-              >Videos</a
-            >
-          </li>
-          <li class="nav-item" role="presentation">
-            <a
-              class="nav-link"
-              id="ex1-tab-3"
-              data-mdb-toggle="tab"
-              href="#ex1-tabs-3"
-              role="tab"
-              aria-controls="ex1-tabs-3"
-              aria-selected="false"
-              >Games</a
-            >
-          </li>
-        </ul>
-        <!-- Tabs navs -->
-
-        <!-- Tabs content -->
-        <div class="tab-content position-relative" id="ex1-content">
-          <div
-            class="tab-pane fade show active position-absolute top-100 start-50 translate-middle"
-            id="ex1-tabs-1"
-            role="tabpanel"
-            aria-labelledby="ex1-tab-1"
-          >
-            Tab 1 content
+    <!-- Modal -->
+    <div
+    class="modal fade"
+    id="modal"
+    tabindex="-1"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Invalid Term</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-mdb-dismiss="modal"
+              aria-label="Close"
+            ></button>
           </div>
-          <div class="tab-pane fade position-absolute top-100 start-50 translate-middle" id="ex1-tabs-2" role="tabpanel" aria-labelledby="ex1-tab-2">
-            Tab 2 content
-          </div>
-          <div class="tab-pane fade position-absolute top-100 start-50 translate-middle" id="ex1-tabs-3" role="tabpanel" aria-labelledby="ex1-tab-3">
-            Tab 3 content
+          <img src="./Assets/Images/cody-duck.png" class="duck-icon" alt="duck-icon">
+          <div class="modal-body">Please enter a valid coding language.</div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">
+              Close
+            </button>
           </div>
         </div>
-        <!-- Tabs content -->
+      </div>
+    </div>
       </section>
-
-      
+    <!-- Learn More -->
+      <section class="about section" id="learnmore">
+        <!-- Tabs navs -->
+      <div class="container grid">
+        <ul class="nav nav-tabs nav-justified md-tabs indigo" id="myTabJust" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" id="article-tab-just" data-toggle="tab" href="#article-just" role="tab" aria-controls="article-just"
+              aria-selected="true">Article</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="videos-tab-just" data-toggle="tab" href="#videos-just" role="tab" aria-controls="videos-just"
+              aria-selected="false">Videos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="games-tab-just" data-toggle="tab" href="#games-just" role="tab" aria-controls="games-just"
+              aria-selected="false">Games</a>
+          </li>
+        </ul>
+        <div class="tab-content card pt-5" id="myTabContentJust">
+          <div class="tab-pane fade show active" id="article-just" role="tabpanel" aria-labelledby="article-tab-just">
+            <p></p>
+          </div>
+          <div class="tab-pane fade" id="videos-just" role="tabpanel" aria-labelledby="videos-tab-just">
+            <p></p>
+          </div>
+          <div class="tab-pane fade" id="games-just" role="tabpanel" aria-labelledby="games-tab-just">
+            <div class="d-flex flex-column mb-3">
+              <div class="p-2 games-bg"><a href="https://codecombat.com/" target="_blank">Code Combat</a></div>
+              <div class="p-2 games-bg"><a href="https://scratch.mit.edu/" target="_blank">Scratch</a></div>
+              <div class="p-2 games-bg"><a href="http://www.crunchzilla.com/code-monster" target="_blank">Code Monster</a></div>
+              <div class="p-2 games-bg"><a href="https://blockly.games/" target="_blank">Blockly</a></div>
+              <div class="p-2 games-bg"><a href="https://www.tynker.com/parents/?lmid=coupon&mc_coupon=discount-20&mc_condition_1=122000000800192000122000000800192000&mc_condition_2=2dc44ea9e7a1109cbef68f77b58187e8&gclid=CjwKCAjwn9v7BRBqEiwAbq1Ey227pLmI3HUA_nQLHLP1GSPEfgh-j2ZLZYG68VQxsjmCnev94OCYZRoC7uEQAvD_BwE" target="_blank">Tynker</a></div>
+              <div class="p-2 games-bg"><a href="https://www.codemoji.com/" target="_blank">Codemoji</a></div>
+              <div class="p-2 games-bg"> <a href="https://code.org/" target="_blank">Code.Org</a></div>
+              <div class="p-2 games-bg"><a href="https://www.codingame.com/start" target="_blank">Codingame</a></div>
+              <div class="p-2 games-bg"><a href="https://www.codemonkey.com/?utm_campaign=cm_gs_a_br_us1&utm_source=google&utm_medium=cpc&utm_content=340351967420&utm_adgroup=codemonkey_em&utm_placement=&gclid=CjwKCAjwn9v7BRBqEiwAbq1EyyHy_xvMaJdKcypFyw6tiS0Yj6s4mjRQ8j4Wug6Jz9k-H2FUH1BT8xoCpqsQAvD_BwE" target="_blank">CodeMonkey</a></div>
+              <div class="p-2 games-bg"><a href="https://www.thinkful.com/learn/ruby-on-rails-tutorial/" target="_blank">Ruby Warrior</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+          <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+          <li class="page-item"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item"><a class="page-link" href="#">Next</a></li>
+        </ul>
+      </nav>
+      </section>
        <!--Developers-->
-       <section class="portfolio section" id="projects">
+       <section class="portfolio section" id="aboutdevelopers">
         <h2 class="section_title">About the Developers</h2>
         <span class="section_subtitle">of Codey Buddy</span>
 
@@ -217,7 +216,6 @@
                 <!--Kelly-->
                 <div class="portfolio_content grid swiper-slide">
                     <img src="Assets/Images/kellywalshpic copy.jpg" alt="Kelly's Portrait" class="portfolio_img">
-
                     <div class="portfolio_data">
                         <h1 class="portfolio_title">Kelly Walsh</h1>
                         <p class="portfolio_description">She is currently attending the Full Stack Boot Camp in University of Denver</p>
@@ -242,7 +240,8 @@
 
             <div class="swiper-pagination"></div>
         </div>
-
+        <label for="favorites-container">Favorites</label>
+        <div id="favorites-container"></div>
 </main>
 <!-- Footer -->
 <footer class="footer">
@@ -252,53 +251,46 @@
           <h1 class="footer_title">Codey Buddy</h1>
           <span class="footer_subtitle">your bud in learning to code</span>
       </div>
-
       <ul class="footer_links">
           <li>
               <a href="#home" class="footer_link">Home</a>
           </li>
           <li>
-              <a href="#projects" class="footer_link">Learn More</a>
+              <a href="#aboutdevelopers" class="footer_link">About</a>
           </li>
           <li>
-              <a href="#contact" class="footer_link">Favorites</a>
+            <a href="https://github.com/micsdz/codey-buddy" target="_blank" class="footer_link">
+               Github
+            </a>
           </li>
       </ul>
-
       <div class="footer_socials">
-          <a href="https://www.facebook.com" target="_blank" class="footer_social">
-              <i class="uil uil-facebook-f"></i>
-          </a>
-          <a href="https://www.instagram.com" target="_blank" class="footer_social">
-              <i class="uil uil-instagram"></i>
-          </a>
-          <a href="https://twitter.com" target="_blank" class="footer_social">
-              <i class="uil uil-twitter-alt"></i>
+        <p>Report Issues Here:</p>
+          <a href="https://github.com/micsdz/codey-buddy/issues" target="_blank" class="footer_social">
+              <i class="uil uil-github"></i>
           </a>
       </div>
   </div>
-
   <p class="footer_copy">&#169; Codey Buddy Website</p>
 </div>
 </footer>
-
 <!--Scroll Top Button-->
 <a href="#" class="scrollup" id="scroll-top">
 <i class="uil uil-arrow-up scrollup_icon"></i>
 </a>
-
 <!-- jQuery -->
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-
 <!--Swiper.js-->
 <script src="Assets/js/swiper-bundle.min.js"></script>
-
 <!-- jQuery UI Autocomplete -->
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-
+<!-- MDB -->
+<script
+  type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.1/mdb.min.js"
+></script>
 <!-- main js -->
     <script src="Assets/js/apiscript.js"></script>
     <script src="Assets/js/script.js"></script>
   </body>
 </html>
-
