@@ -5,6 +5,8 @@ const videosDiv = document.getElementById("videos-just");
 const favDiv = document.getElementById("favorites-container");
 const myModalEl = document.getElementById("modal");
 const modal = new mdb.Modal(myModalEl);
+const favoriteButton = document.getElementById("favorites-btn");
+const clearButton = document.getElementById("clearButton");
 const languageNames = [
   "Argus",
   "BETA",
@@ -239,6 +241,8 @@ function toggleSavedFavorites() {
   }
 }
 
+// Modal Search Button
+
 searchButton.addEventListener("click", function (e) {
   e.preventDefault();
   const searchTerm = searchInput.value.toLowerCase();
@@ -286,6 +290,21 @@ function isValidSearchTerm(searchTerm) {
     return false;
   }
 }
+
+// Modal Favorite Button
+
+favoriteButton.addEventListener("click", function (e) {
+  e.preventDefault();
+  const searchTerm = searchInput.value.toLowerCase();
+  if (isValidSearchTerm(searchTerm)) {
+    searchYoutube();
+    searchGoogle();
+  } else {
+    const myModalEl = document.getElementById("modalFavorite");
+    const modal = new mdb.Modal(myModalEl);
+    modal.show();
+  }
+});
 
 listFavorites();
 
