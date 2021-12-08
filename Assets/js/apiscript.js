@@ -3,6 +3,8 @@ const searchButton = document.getElementById("search-btn");
 const articlesDiv = document.getElementById("article-just");
 const videosDiv = document.getElementById("videos-just");
 const favDiv = document.getElementById("favorites-container");
+const myModalEl = document.getElementById("modal");
+const modal = new mdb.Modal(myModalEl);
 const languageNames = [
   "Argus",
   "BETA",
@@ -241,8 +243,6 @@ searchButton.addEventListener("click", function (e) {
   e.preventDefault();
   const searchTerm = searchInput.value.toLowerCase();
   if (!isValidSearchTerm(searchTerm)) {
-    const myModalEl = document.getElementById("modal");
-    const modal = new mdb.Modal(myModalEl);
     return modal.show();
   }
   searchYoutube(PageSelector.CURRENT);
@@ -253,8 +253,6 @@ prevButton.addEventListener("click", function (e) {
   e.preventDefault();
   const searchTerm = searchInput.value.toLowerCase();
   if (!isValidSearchTerm(searchTerm)) {
-    const myModalEl = document.getElementById("modal");
-    const modal = new mdb.Modal(myModalEl);
     return modal.show();
   }
   if (previousPageToken) {
@@ -269,8 +267,6 @@ nextButton.addEventListener("click", function (e) {
   e.preventDefault();
   const searchTerm = searchInput.value.toLowerCase();
   if (!isValidSearchTerm(searchTerm)) {
-    const myModalEl = document.getElementById("modal");
-    const modal = new mdb.Modal(myModalEl);
     return modal.show();
   }
   if (nextPageToken) {
