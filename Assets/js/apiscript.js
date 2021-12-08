@@ -92,13 +92,15 @@ function showYoutubeResults(response) {
     let thumbnail = item.snippet.thumbnails.default.url;
     html +=
       '<div class="result-item-base youtube-result-item">' +
-      `<a href="${url}">` +
-      `<img src="${thumbnail}">` +
-      '<div class="result-item-text">' +
-      `<h1>V: ${title}</h1>` +
-      `<p>${description}</p>` +
-      "</div></a>" +
       createFavoriteHTML(videoId, url) +
+      `&nbsp;` +
+      `<a href="${url}">` +
+      `&nbsp;` +
+      `<img src="${thumbnail}">` +
+      `&nbsp;` +
+      '<div class="result-item-text">' +
+      `<p>V: ${title}</p>` +
+      "</div></a>" +
       "</div>";
   });
 
@@ -144,12 +146,15 @@ function showGoogleResults(response) {
 
     html +=
       '<div class="result-item-base google-result-item">' +
-      `<a href="${url}">` +
-      (thumbnail ? `<img src="${thumbnail}" width="128" height="128">` : "") +
-      '<div class="result-item-text">' +
-      `<h1>A: ${title}</h1>` +
-      "</div></a>" +
       createFavoriteHTML(index, url) +
+      `&nbsp;` +
+      `<a href="${url}" target="_blank">` +
+      `&nbsp;` +
+      (thumbnail ? `<img src="${thumbnail}" width="50" height="50">` : "") +
+      '<div class="result-item-text">' +
+      `&nbsp;` +
+      `<p>A: ${title}</p>` +
+      "</div></a>" +
       "</div>";
   });
 
