@@ -75,7 +75,7 @@ function listFavorites() {
 }
 function createFavoriteHTML(id, url) {
   let favData = `<input id = "fav-btn-${id}-url" value = "${url}" type = "hidden"></input>`;
-  let favBtn = `<button id = "fav-btn-${id}" onClick = "setFavorite(this.id)">Favorite</button>`;
+  let favBtn = `<button class = "tosave-btn" id = "fav-btn-${id}" onClick = "setFavorite(this.id)"><img src="./Assets/Images/favorite.png" alt="save-icon"></button>`;
   return favData + favBtn;
 }
 
