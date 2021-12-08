@@ -227,17 +227,10 @@ function isValidSearchTerm(searchTerm) {
 
 // Modal Favorite Button
 
-favoriteButton.addEventListener("click", function (e) {
-  e.preventDefault();
-  const searchTerm = searchInput.value.toLowerCase();
-  if (isValidSearchTerm(searchTerm)) {
-    searchYoutube();
-    searchGoogle();
-  } else {
-    const myModalEl = document.getElementById("modalFavorite");
-    const modal = new mdb.Modal(myModalEl);
-    modal.show();
-  }
+favoriteButton.addEventListener("click", function () {
+  const myModalEl = document.getElementById("modalFavorite");
+  const modal = new mdb.Modal(myModalEl);
+  modal.show();
 });
 
 listFavorites();
