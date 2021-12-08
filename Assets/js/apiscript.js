@@ -112,6 +112,7 @@ function searchYoutube() {
     part: "snippet",
     key: apiKey,
     q: searchTerm,
+    maxResults: 49,
   };
 
   requestUrl +=
