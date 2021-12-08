@@ -3,6 +3,8 @@ const searchButton = document.getElementById("search-btn");
 const articlesDiv = document.getElementById("article-just");
 const videosDiv = document.getElementById("videos-just");
 const favDiv = document.getElementById("favorites-container");
+const myModalEl = document.getElementById("modal");
+const modal = new mdb.Modal(myModalEl);
 const favoriteButton = document.getElementById("favorites-btn");
 const clearButton = document.getElementById("clearButton");
 const languageNames = [
@@ -40,6 +42,18 @@ const languageNames = [
 
 const apiKey = "AIzaSyDW_VEGzWHTEaftCppwRMklcHH3tpPUBdU";
 
+const nextButton = document.getElementById("next-btn");
+const prevButton = document.getElementById("prev-btn");
+
+const PageSelector = {
+  CURRENT: 0,
+  PREVIOUS: -1,
+  NEXT: 1,
+};
+
+let googleResultsStart = 1;
+let previousPageToken = null;
+let nextPageToken = null;
 let favorites = [];
 
 function getFavorites() {
@@ -83,6 +97,15 @@ function createFavoriteHTML(id, url) {
 
 //#region Youtube
 function showYoutubeResults(response) {
+  if (response.nextPageToken) {
+    nextPageToken = response.nextPageToken;
+  }
+  if (response.prevPageToken) {
+    previousPageToken = response.prevPageToken;
+  } else {
+    previousPageToken = null;
+  }
+
   let html = "";
   let videoItems = response.items;
 
@@ -109,15 +132,21 @@ function showYoutubeResults(response) {
   videosDiv.innerHTML = html;
 }
 
-function searchYoutube() {
+function searchYoutube(selectedPage) {
   let searchTerm = searchInput.value;
   let requestUrl = "https://www.googleapis.com/youtube/v3/search";
-  const params = {
+  let params = {
     part: "snippet",
     key: apiKey,
     q: searchTerm,
-    maxResults: 49,
+    maxResults: 10,
   };
+  if (selectedPage === PageSelector.NEXT) {
+    params.pageToken = nextPageToken;
+  }
+  if (selectedPage === PageSelector.PREVIOUS) {
+    params.pageToken = previousPageToken;
+  }
 
   requestUrl +=
     "?" +
@@ -163,14 +192,23 @@ function showGoogleResults(response) {
   articlesDiv.innerHTML = html;
 }
 
-function searchGoogle() {
+function searchGoogle(selectedPage) {
   let searchTerm = searchInput.value;
   let requestUrl = "https://customsearch.googleapis.com/customsearch/v1";
   const searchEngineId = "60fa70cd46d710892";
+  if (selectedPage === PageSelector.NEXT) {
+    googleResultsStart += 10;
+  }
+  if (selectedPage === PageSelector.PREVIOUS) {
+    googleResultsStart -= 10;
+  }
+
   let params = {
     key: apiKey,
     cx: searchEngineId,
     q: searchTerm,
+    num: 10,
+    start: googleResultsStart,
   };
 
   requestUrl +=
@@ -208,14 +246,37 @@ function toggleSavedFavorites() {
 searchButton.addEventListener("click", function (e) {
   e.preventDefault();
   const searchTerm = searchInput.value.toLowerCase();
-  if (isValidSearchTerm(searchTerm)) {
-    searchYoutube();
-    searchGoogle();
-  } else {
-    const myModalEl = document.getElementById("modal");
-    const modal = new mdb.Modal(myModalEl);
-    modal.show();
+  if (!isValidSearchTerm(searchTerm)) {
+    return modal.show();
   }
+  searchYoutube(PageSelector.CURRENT);
+  searchGoogle(PageSelector.CURRENT);
+});
+
+prevButton.addEventListener("click", function (e) {
+  e.preventDefault();
+  const searchTerm = searchInput.value.toLowerCase();
+  if (!isValidSearchTerm(searchTerm)) {
+    return modal.show();
+  }
+  if (previousPageToken) {
+    searchYoutube(PageSelector.PREVIOUS);
+  }
+  if (googleResultsStart >= 10) {
+    searchGoogle(PageSelector.PREVIOUS);
+  }
+});
+
+nextButton.addEventListener("click", function (e) {
+  e.preventDefault();
+  const searchTerm = searchInput.value.toLowerCase();
+  if (!isValidSearchTerm(searchTerm)) {
+    return modal.show();
+  }
+  if (nextPageToken) {
+    searchYoutube(PageSelector.NEXT);
+  }
+  searchGoogle(PageSelector.NEXT);
 });
 
 function isValidSearchTerm(searchTerm) {
