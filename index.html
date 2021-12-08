@@ -20,7 +20,7 @@
     <header class="header" id="header">
        <!-- Nav Menu -->
        <nav class="nav container">
-        <a href="#" class="nav_logo">Codey Buddy</a>
+        <img src="./Assets/Images/codeybuddy.jpg" class="codey-icon" alt="save-icon"><a href="#" class="typewriter">Codey Buddy</a>
         <div class="nav_menu" id="nav-menu">
           <ul class="nav_list grid">
             <li class="nav_item">
@@ -60,8 +60,6 @@
               <label class="form-label" for="search-field">Search</label>
               <input name="Coding Language" id="search-here" type="text" autofocus="true" class="form-input" />
               <button id="search-btn" class="search-btn"><img src="./Assets/Images/search2.png" alt="search-icon"></button>
-              <button id="prev-btn" class="search-btn">Previous</button>
-              <button id="next-btn" class="search-btn">Next</button>
               <button id="favorites-btn" class="favorites-btn"><img src="./Assets/Images/save.png" alt="save-icon"></button>
             </div>
           </div>
@@ -131,7 +129,7 @@ aria-hidden="true"
       <section class="about section" id="learnmore">
         <!-- Tabs navs -->
       <div class="container grid">
-        <ul class="nav nav-tabs nav-justified md-tabs indigo" id="myTabJust" role="tablist">
+        <ul class="nav nav-tabs nav-justified tab" id="myTabJust" role="tablist">
           <li class="nav-item">
             <a class="nav-link active" id="article-tab-just" data-toggle="tab" href="#article-just" role="tab" aria-controls="article-just"
               aria-selected="true">Article</a>
@@ -146,13 +144,13 @@ aria-hidden="true"
           </li>
         </ul>
         <div class="tab-content card pt-5" id="myTabContentJust">
-          <div class="tab-pane fade show active" id="article-just" role="tabpanel" aria-labelledby="article-tab-just">
+          <div class="tab-pane fade show active tab" id="article-just" role="tabpanel" aria-labelledby="article-tab-just">
             <p></p>
           </div>
-          <div class="tab-pane fade" id="videos-just" role="tabpanel" aria-labelledby="videos-tab-just">
+          <div class="tab-pane fade tab" id="videos-just" role="tabpanel" aria-labelledby="videos-tab-just">
             <p></p>
           </div>
-          <div class="tab-pane fade" id="games-just" role="tabpanel" aria-labelledby="games-tab-just">
+          <div class="tab-pane fade tab" id="games-just" role="tabpanel" aria-labelledby="games-tab-just">
             <div class="d-flex flex-column mb-3">
               <div class="p-2 games-bg"><a href="https://codecombat.com/" target="_blank">Code Combat</a></div>
               <div class="p-2 games-bg"><a href="https://scratch.mit.edu/" target="_blank">Scratch</a></div>
@@ -166,17 +164,16 @@ aria-hidden="true"
               <div class="p-2 games-bg"><a href="https://www.thinkful.com/learn/ruby-on-rails-tutorial/" target="_blank">Ruby Warrior</a></div>
             </div>
           </div>
+          <div>
+            <nav aria-label="Page navigation example">
+              <ul class="pagination justify-content-center">
+                <li class="page-item"><a id="prev-btn" class="search-btn previous-next" href="#"><img src="./Assets/Images/previous.jpg" class="previous-next" alt="prev-icon"></a></li>
+                <li class="page-item"><a id="next-btn" class="search-btn previous-next" href="#"><img src="./Assets/Images/next.jpg" class="previous-next" alt="next-icon"></a></li>
+              </ul>
+            </nav>
+          </div>
         </div>
       </div>
-      <nav aria-label="Page navigation example">
-        <ul class="pagination justify-content-center">
-          <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-          <li class="page-item"><a class="page-link" href="#">1</a></li>
-          <li class="page-item"><a class="page-link" href="#">2</a></li>
-          <li class="page-item"><a class="page-link" href="#">3</a></li>
-          <li class="page-item"><a class="page-link" href="#">Next</a></li>
-        </ul>
-      </nav>
       </section>
        <!--Developers-->
        <section class="portfolio section" id="aboutdevelopers">
@@ -285,18 +282,18 @@ aria-hidden="true"
               <a href="#aboutdevelopers" class="footer_link">About</a>
           </li>
           <li>
-              <a href="#contact" class="footer_link">Favorites</a>
+              <a href="https://github.com/micsdz/codey-buddy" class="footer_link">Github</a>
           </li>
       </ul>
       <div class="footer_socials">
-          <a href="https://www.facebook.com" target="_blank" class="footer_social">
-              <i class="uil uil-facebook-f"></i>
+          <a href="https://github.com/micsdz/codey-buddy/network/members" target="_blank" class="footer_social">
+            <i class="uil uil-code-branch"></i>
           </a>
-          <a href="https://www.instagram.com" target="_blank" class="footer_social">
-              <i class="uil uil-instagram"></i>
+          <a href="https://github.com/micsdz/codey-buddy/issues" target="_blank" class="footer_social">
+            <i class="uil uil-link-broken"></i>
           </a>
-          <a href="https://twitter.com" target="_blank" class="footer_social">
-              <i class="uil uil-twitter-alt"></i>
+          <a href="https://github.com/micsdz/codey-buddy/pulse" target="_blank" class="footer_social">
+            <i class="uil uil-analytics"></i>
           </a>
       </div>
   </div>
