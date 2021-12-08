@@ -469,3 +469,9 @@ right: -3.5rem;
     from, to { border-color: transparent }
     50% { border-color: rgb(153, 135, 101) }
   }
+.tab {
+    margin-left: 150px;
+}
+.tab2 {
+    margin-left: 75px;
+}
