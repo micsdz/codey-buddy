@@ -434,9 +434,10 @@ right: -3.5rem;
 .result-item-text {
     display: inline-block;
     font-family: var(--body-font);
-    font-size: 1px;
+    font-size: 20px;
 }
-.tosave-btn {
+.tosave-btn, #instruction-icon {
     width: 40px;
     height: 40px;
+    border-color: #fff;
 }
