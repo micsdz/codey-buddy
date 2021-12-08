@@ -182,6 +182,7 @@ function showGoogleResults(response) {
       `<a href="${url}" target="_blank">` +
       `&nbsp;` +
       (thumbnail ? `<img src="${thumbnail}" width="50" height="50">` : "") +
+      `&nbsp;` +
       '<div class="result-item-text">' +
       `&nbsp;` +
       `<p>A: ${title}</p>` +
