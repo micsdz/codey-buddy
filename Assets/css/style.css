@@ -43,6 +43,17 @@
     --z-fixed: 100;
     --z-modal: 1000;
 }
+
+.search-card {
+   width: 95%;
+   margin: auto;
+   text-align: center; 
+}
+
+#myTabJust {
+    margin:0;
+}
+
 /* var media queries */
 @media screen and (min-width: 968px) {
     .root {
@@ -95,7 +106,7 @@ img{
 .section_subtitle{
     display: block;
     font-size: var(--small-font-size);
-    margin-bottom: var(--mb-3);
+    margin-bottom: var(--mb-1);
 }
 .section_title, .section_subtitle{
     text-align: center;
@@ -109,6 +120,12 @@ img{
 .grid{
     display: grid;
     gap: 1.5rem;
+   margin: 0 auto;
+}
+
+#myTabJust {
+    margin: 0 auto;
+    width: 90%;
 }
 .header{
     width: 100%;
@@ -146,6 +163,7 @@ img{
 }
 /* media queries */
 @media screen and (max-width: 767px){
+    
     .nav_menu{
         position: fixed;
         bottom: -100%;
@@ -334,6 +352,7 @@ column-gap: 0;
 .footer_container {
 grid-template-columns: repeat(2, 1fr);
 }
+
 }
 @media screen and (min-width: 768px) {
 .container {
@@ -343,11 +362,15 @@ margin-right: auto;
 body {
 margin: 0;
 }
+.search-card {
+    width: 50%;
+    
+ }
 .section {
 padding: 6rem 0 2rem;
 }
 .section_subtitle {
-margin-bottom: 4rem;
+margin-bottom: 1rem;
 }
 .header {
 top: 0;
@@ -442,17 +465,17 @@ right: -3.5rem;
     border-color: #fff;
 }
 .previous-next {
-    width: 100px;
+    width: 50px;
     height: 50px;
 }
 .typewriter {
     color: rgb(5, 5, 5);
     font-family: var(--body-font);
-    overflow: hidden; /* Ensures the content is not revealed until the animation */
-    border-right: .15em solid rgb(153, 137, 107); /* The typwriter cursor */
-    white-space: nowrap; /* Keeps the content on a single line */
-    margin: 0; /* Gives that scrolling effect as the typing happens */
-    letter-spacing: .15em; /* Adjust as needed */
+    overflow: hidden; 
+    border-right: .15em solid rgb(153, 137, 107);
+    white-space: nowrap;
+    margin: 0; 
+    letter-spacing: .15em;
     animation: 
       typing 3.5s steps(30, end),
       blink-caret .5s step-end infinite;
@@ -469,9 +492,6 @@ right: -3.5rem;
     from, to { border-color: transparent }
     50% { border-color: rgb(153, 135, 101) }
   }
-.tab {
-    margin-left: 150px;
-}
 .tab2 {
     margin-left: 75px;
 }
