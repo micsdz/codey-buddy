@@ -73,6 +73,20 @@ clearButton.addEventListener("click", function () {
   clearUl();
 });
 
+function clearStorage(){
+  console.log('clear clicked')
+  localStorage.clear();
+}
+
+function clearUl(){
+  favDiv.innerHTML = "Your Favorites is empty";
+}
+
+clearButton.addEventListener("click", function(){
+  clearStorage();
+  clearUl();
+})
+
 function setFavorite(clickedId) {
   // "do this for the title" const favTitle = ....
   const favUrl = document.getElementById(clickedId + "-url").value;
@@ -124,7 +138,6 @@ function showYoutubeResults(response) {
 
   videoItems.forEach((item) => {
     let title = item.snippet.title;
-    let description = item.snippet.description;
     let videoId = item.id.videoId;
     let url = `https://www.youtube.com/watch?v=${videoId}`;
     let thumbnail = item.snippet.thumbnails.default.url;
@@ -132,7 +145,7 @@ function showYoutubeResults(response) {
       '<div class="result-item-base youtube-result-item">' +
       createFavoriteHTML(videoId, url) +
       `&nbsp;` +
-      `<a href="${url}">` +
+      `<a href="${url}" target="_blank">` +
       `&nbsp;` +
       `<img src="${thumbnail}">` +
       `&nbsp;` +
@@ -237,23 +250,6 @@ function searchGoogle(selectedPage) {
   });
 }
 //#endregion
-function displayFavorites() {
-  favDiv.style.display = "block";
-}
-
-function toggleSavedFavorites() {
-  const mySavedFavorites = document.getElementById("userFavorites");
-  let displaySetting = mySavedFavorites.style.display;
-  let mySavedFavoritesButton = document.getElementById("SavedFavsButton");
-
-  if (displaySetting == "block") {
-    mySavedFavoritesButton.style.display = "none";
-    SavedFavsButton.innerHTML = "Show Favs";
-  } else {
-    mySavedFavoritesButton.style.display = "block";
-    SavedFavsButton.innerHTML = "Hide Favs";
-  }
-}
 
 // Modal Search Button
 
@@ -271,7 +267,6 @@ prevButton.addEventListener("click", function (e) {
   e.preventDefault();
   const searchTerm = searchInput.value.toLowerCase();
   if (!isValidSearchTerm(searchTerm)) {
-    return modal.show();
   }
   if (previousPageToken) {
     searchYoutube(PageSelector.PREVIOUS);
@@ -285,7 +280,6 @@ nextButton.addEventListener("click", function (e) {
   e.preventDefault();
   const searchTerm = searchInput.value.toLowerCase();
   if (!isValidSearchTerm(searchTerm)) {
-    return modal.show();
   }
   if (nextPageToken) {
     searchYoutube(PageSelector.NEXT);
@@ -314,138 +308,3 @@ favoriteButton.addEventListener("click", function () {
 });
 
 listFavorites();
-
-const mockYoutubeResults = {
-  items: [
-    {
-      id: {
-        videoId: "MockVideoId0",
-      },
-      snippet: {
-        title: "YouTube Mock Title",
-        description: "YouTube Mock Description, blah blah blah.",
-        thumbnails: {
-          default: {
-            url: "https://i.ytimg.com/vi/eX2qFMC8cFo/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBu-nic8l07zW0vFToITMym5Y5CUQ",
-          },
-        },
-      },
-    },
-    {
-      id: {
-        videoId: "MockVideoId1",
-      },
-      snippet: {
-        title: "YouTube Mock Title",
-        description: "YouTube Mock Description, blah blah blah.",
-        thumbnails: {
-          default: {
-            url: "https://i.ytimg.com/vi/eX2qFMC8cFo/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBu-nic8l07zW0vFToITMym5Y5CUQ",
-          },
-        },
-      },
-    },
-    {
-      id: {
-        videoId: "MockVideoId2",
-      },
-      snippet: {
-        title: "YouTube Mock Title",
-        description: "YouTube Mock Description, blah blah blah.",
-        thumbnails: {
-          default: {
-            url: "https://i.ytimg.com/vi/eX2qFMC8cFo/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBu-nic8l07zW0vFToITMym5Y5CUQ",
-          },
-        },
-      },
-    },
-    {
-      id: {
-        videoId: "MockVideoId3",
-      },
-      snippet: {
-        title: "YouTube Mock Title",
-        description: "YouTube Mock Description, blah blah blah.",
-        thumbnails: {
-          default: {
-            url: "https://i.ytimg.com/vi/eX2qFMC8cFo/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBu-nic8l07zW0vFToITMym5Y5CUQ",
-          },
-        },
-      },
-    },
-    {
-      id: {
-        videoId: "MockVideoId4",
-      },
-      snippet: {
-        title: "YouTube Mock Title",
-        description: "YouTube Mock Description, blah blah blah.",
-        thumbnails: {
-          default: {
-            url: "https://i.ytimg.com/vi/eX2qFMC8cFo/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBu-nic8l07zW0vFToITMym5Y5CUQ",
-          },
-        },
-      },
-    },
-    {
-      id: {
-        videoId: "MockVideoId5",
-      },
-      snippet: {
-        title: "YouTube Mock Title",
-        description: "YouTube Mock Description, blah blah blah.",
-        thumbnails: {
-          default: {
-            url: "https://i.ytimg.com/vi/eX2qFMC8cFo/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBu-nic8l07zW0vFToITMym5Y5CUQ",
-          },
-        },
-      },
-    },
-  ],
-};
-
-const mockGoogleResults = {
-  items: [
-    {
-      title: "Google Mock Title",
-      link: "Google Mock  Url",
-      pagemap: {
-        cse_thumbnail: [
-          {
-            src: "https://i.ytimg.com/vi/eX2qFMC8cFo/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBu-nic8l07zW0vFToITMym5Y5CUQ",
-          },
-        ],
-      },
-    },
-    {
-      title: "Google Mock Title",
-      link: "Google Mock  Url",
-    },
-    {
-      title: "Google Mock Title",
-      link: "Google Mock  Url",
-      pagemap: {
-        cse_thumbnail: [
-          {
-            src: "https://i.ytimg.com/vi/eX2qFMC8cFo/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBu-nic8l07zW0vFToITMym5Y5CUQ",
-          },
-        ],
-      },
-    },
-    {
-      title: "Google Mock Title",
-      link: "Google Mock  Url",
-    },
-    {
-      title: "Google Mock Title",
-      link: "Google Mock  Url",
-      pagemap: {
-        cse_thumbnail: [
-          {
-            src: "https://i.ytimg.com/vi/eX2qFMC8cFo/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBu-nic8l07zW0vFToITMym5Y5CUQ",
-          },
-        ],
-      },
-    },
-  ],
-};
