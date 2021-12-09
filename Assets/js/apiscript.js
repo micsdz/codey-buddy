@@ -6,7 +6,7 @@ const favDiv = document.getElementById("favorites-container");
 const myModalEl = document.getElementById("modal");
 const modal = new mdb.Modal(myModalEl);
 const favoriteButton = document.getElementById("favorites-btn");
-const clearButton = document.getElementById("clearButton");
+const clearButton = document.getElementById("clear-btn");
 const languageNames = [
   "Argus",
   "BETA",
@@ -59,6 +59,19 @@ let favorites = [];
 function getFavorites() {
   favorites = JSON.parse(localStorage.getItem("savedFavorites") || "[]");
 }
+function clearStorage() {
+  console.log("clear clicked");
+  localStorage.clear();
+}
+
+function clearUl() {
+  favDiv.innerHTML = "Your Favorites is empty";
+}
+
+clearButton.addEventListener("click", function () {
+  clearStorage();
+  clearUl();
+});
 
 function setFavorite(clickedId) {
   // "do this for the title" const favTitle = ....
