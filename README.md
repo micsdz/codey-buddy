@@ -61,7 +61,7 @@ SO THAT I can save it.
 
 Website's Appearance:
 
-![Appearance](Assets/gif/Mobileview.gif)
+![Appearance](Assets/gif/codeybuddy.gif)
 
 ### Built With
 
